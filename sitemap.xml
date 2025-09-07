@@ -8,25 +8,21 @@
 
 
 <url>
-  <loc>https://pmoneymusic.com/</loc>
+  <loc>https://www.pmoneymusic.com/</loc>
   <lastmod>2025-03-07T19:49:32+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://pmoneymusic.com/sequencer.html</loc>
+  <loc>https://www.pmoneymusic.com/sequencer.html</loc>
   <lastmod>2025-03-07T19:50:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://pmoneymusic.com/index.html</loc>
+  <loc>https://www.pmoneymusic.com/index.html</loc>
   <lastmod>2025-03-07T19:49:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
-<url>
-  <loc>https://pmoneymusic.com/contracts/</loc>
-  <lastmod>2025-03-07T19:49:32+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+
 
 
 </urlset>
