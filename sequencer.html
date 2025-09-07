@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <h1 style="margin: 0;" class="btn btn-primary">SAMPLER</h1>
+            <a href="index.html" class="btn btn-secondary" style="margin-left: auto;">BACK ↗</a>
+        </header>
+        
+        <section class="file-upload-section">
+            <div class="upload-container">
+                <label for="audioFile" class="upload-btn">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/>
+                    </svg>
+                    <span>Load Audio File</span>
+                </label>
+                <input type="file" id="audioFile" accept="audio/*" hidden>
+                <div id="fileName" class="file-name">No file selected</div>
+            </div>
+        </section>
+
+        <section class="waveform-section">
+            <div class="waveform-container">
+                <canvas id="waveform"></canvas>
+                <div id="empty-state" class="empty-state">
+                    <svg class="icon-large" viewBox="0 0 24 24">
+                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                    </svg>
+                    <p>Upload an audio file to see waveform</p>
+                </div>
+                <div id="timeline" class="timeline"></div>
+            </div>
+        </section>
+
+        <section class="controls-section">
+            <div class="transport-controls">
+                <button id="playBtn" class="control-btn play-btn" disabled>
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+                <button id="stopBtn" class="control-btn stop-btn" disabled>
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M6 6h12v12H6z"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="cue-points-section">
+            <h2>Cue Points</h2>
+            <div class="cue-instructions">
+                <p>Click on waveform to add cue points. Press the letter key shown on each cue point to trigger it. Shift+click on cue button to remove.</p>
+            </div>
+            <div id="cueButtons" class="cue-buttons-container">
+                <div id="no-cues" class="no-cues-message">No cue points added yet</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

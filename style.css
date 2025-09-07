@@ -1,0 +1,328 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color palette */
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #252525;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --text-black: #000000;
+    --accent-primary: #1DB954;  /* Spotify-inspired green */
+    --accent-secondary: #535353;
+    --error: #e74c3c;
+    --button-hover: #333333;
+    
+    /* Cue point colors */
+    --cue-colors: #FF5722, #FFC107, #4CAF50, #2196F3, #9C27B0, #F44336;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+body {
+    font-family: 'Geist', Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: var(--space-md);
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+header {
+    text-align: center;
+    padding: var(--space-md) 0;
+/*    border-bottom: 1px solid var(--accent-secondary);*/
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+}
+
+section {
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+.btn-primary {
+    background-color: #50fa7b;
+    color: black;
+}
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+/* File upload section */
+.file-upload-section {
+    display: flex;
+    justify-content: center;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.upload-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background-color: var(--accent-primary);
+    color: var(--text-black);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.upload-btn:hover {
+    background-color: #1aa34a;
+}
+
+.file-name {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+/* Waveform section */
+.waveform-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+#waveform {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    cursor: crosshair;
+}
+
+.empty-state {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+
+/* Controls section */
+.controls-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transport-controls, .zoom-controls {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.control-btn {
+    background-color: var(--accent-primary);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover:not(:disabled) {
+    background-color: #1aa34a;
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.play-btn {
+    background-color: var(--accent-primary);
+}
+
+.play-btn:hover:not(:disabled) {
+    background-color: #1aa34a;
+}
+
+.play-btn.pause {
+    background-color: var(--accent-primary);
+}
+
+/* Cue points section */
+.cue-instructions {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.cue-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    min-height: 40px;
+}
+
+.cue-button {
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    transition: transform 0.1s;
+}
+
+.cue-button:hover {
+    transform: translateY(-2px);
+}
+
+.no-cues-message {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Icons */
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.icon-large {
+    width: 48px;
+    height: 48px;
+    fill: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* Error state */
+.error-message {
+    color: var(--error);
+    padding: var(--space-sm);
+    background-color: rgba(231, 76, 60, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    margin-top: var(--space-sm);
+}
+
+
+/* Loading spinner */
+.loading-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid var(--accent-primary);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--space-sm);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.file-loaded {
+    color: var(--text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .controls-section {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+    
+    .waveform-container {
+        height: 150px;
+    }
+}
+
+.key-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 18px;
+    height: 18px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-right: var(--space-xs);
+    padding: 0 2px;
+}
+
+.key-triggered {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Add an instruction for keyboard shortcuts */
+.keyboard-instructions {
+    margin-top: var(--space-xs);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
