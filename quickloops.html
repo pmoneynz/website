@@ -454,7 +454,7 @@
             <p class="subtle" style="margin:0 0 16px">Support for Apple Silicon (M1/M2/M3/M4) or Intel Macs.</p>
             <div class="hero-ctas">
               <!-- Replace hrefs with your actual DMG links -->
-              <a class="btn btn-primary" href="track-download.php?file=QuickLoops_Installer.dmg&source=quickloops">Download · Latest Build</a>
+              <a class="btn btn-primary" href="downloads/QuickLoops_Installer.dmg" onclick="trackDownload('QuickLoops_Installer.dmg', 'quickloops')">Download · Latest Build</a>
             </div>
             <p class="subtle" style="margin-top:10px">Code-signed & notarized. Drag-and-drop install.</p>
             <hr style="border:none; border-top:1px solid var(--stroke); margin:18px 0">
@@ -534,6 +534,39 @@
         }
       });
     });
+
+    // Download tracking function
+    function trackDownload(filename, source) {
+      // Send tracking data to a simple logging endpoint
+      const trackingData = {
+        file: filename,
+        source: source,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        referrer: document.referrer,
+        url: window.location.href
+      };
+
+      // Try to send tracking data (fails gracefully if PHP not available)
+      fetch('track-download.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(trackingData)
+      }).catch(() => {
+        // Tracking failed, but download continues
+        console.log('Download tracking unavailable');
+      });
+
+      // Also try Google Analytics if available
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'file_download', {
+          'file_name': filename,
+          'download_source': source
+        });
+      }
+    }
   </script>
 </body>
 </html>
