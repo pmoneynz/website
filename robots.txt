@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /logs/
-Disallow: /download-stats.php
 
 Sitemap: https://www.pmoneymusic.com/sitemap.xml
