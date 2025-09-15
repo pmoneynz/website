@@ -14,7 +14,17 @@
   <meta property="og:url" content="https://pmoneymusic.com/quickloops"> <!-- replace -->
   <link rel="icon" href="/icons/favicon.ico"> <!-- replace -->
   <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"> <!-- replace -->
-  <style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFF03CTZZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-DFF03CTZZZ", {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>  <style>
     /* ====== Base / Type ====== */
     :root{
       --bg: #ffffff;
@@ -535,7 +545,7 @@
       });
     });
 
-    // Download tracking function for GitHub Pages (static hosting)
+    // Enhanced download tracking function for GitHub Pages
     function trackDownload(filename, source) {
       // Create tracking data object
       const trackingData = {
@@ -544,28 +554,48 @@
         source: source,
         timestamp: new Date().toISOString(),
         page: window.location.pathname,
-        referrer: document.referrer
+        referrer: document.referrer,
+        userAgent: navigator.userAgent
       };
 
-      // Track with Google Analytics (recommended for static sites)
+      // Enhanced Google Analytics 4 tracking
       if (typeof gtag !== "undefined") {
+        // Main download event
         gtag("event", "file_download", {
           "file_name": filename,
+          "file_extension": filename.split(".").pop(),
           "download_source": source,
-          "file_extension": filename.split(".").pop()
+          "page_location": window.location.href,
+          "page_title": document.title
+        });
+
+        // Custom QuickLoops download event
+        gtag("event", "quickloops_download", {
+          "event_category": "QuickLoops",
+          "event_label": source,
+          "value": 1
+        });
+
+        // Track user engagement
+        gtag("event", "engagement", {
+          "engagement_time_msec": Date.now()
         });
       }
 
       // Log to console for debugging
       console.log("Download tracked:", trackingData);
 
-      // Optional: Send to localStorage for later analysis
+      // Store in localStorage for backup analytics
       try {
-        const downloads = JSON.parse(localStorage.getItem("downloads") || "[]");
+        const downloads = JSON.parse(localStorage.getItem("pmoneyDownloads") || "[]");
         downloads.push(trackingData);
-        localStorage.setItem("downloads", JSON.stringify(downloads));
+        // Keep only last 100 downloads to avoid storage bloat
+        if (downloads.length > 100) downloads.splice(0, downloads.length - 100);
+        localStorage.setItem("pmoneyDownloads", JSON.stringify(downloads));
       } catch (e) {
         console.log("Local storage unavailable");
+      }
+    }        console.log("Local storage unavailable");
       }
     }  </script>
 </body>
