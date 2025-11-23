@@ -12,11 +12,11 @@
       <sparkle:version>1.0.1</sparkle:version>
       <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-      <enclosure url="https://pmoneymusic.com/quickloopspro/beta/QuickLoopsPro.dmg"
+      <enclosure url="https://pmoneymusic.com/quickloopspro/beta/QuickLoopsPro-1.0-b1.dmg"
                  sparkle:version="1.0.1"
                  sparkle:shortVersionString="1.0.1"
                  type="application/octet-stream"
-                 length="6196233"/>
+                 length="4352319"/>
       <sparkle:releaseNotesLink>https://pmoneymusic.com/quickloopspro/beta/release-notes/1.0.1.html</sparkle:releaseNotesLink>
     </item>
   </channel>
