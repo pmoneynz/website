@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QuickLoops Free — A simple, studio-grade loop pedal for macOS</title>
-  <meta name="description" content="QuickLoops Free is a minimal, studio-grade loop pedal for macOS. Zero-latency monitoring, tape-style speed control, undo/redo, WAV export & MIDI." />
+  <title>QuickLoops Pro — Professional Loop Station for macOS</title>
+  <meta name="description" content="QuickLoops Pro is coming soon. The professional loop station for macOS with studio-grade audio, advanced MIDI, and zero latency." />
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta property="og:title" content="QuickLoops Free — A simple, studio-grade loop pedal for macOS">
-  <meta property="og:description" content="Zero-latency monitoring, tape-style speed control, undo/redo, WAV export & MIDI.">
+  <meta property="og:title" content="QuickLoops Pro — Coming Soon">
+  <meta property="og:description" content="The professional loop station for macOS. Join the beta.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="img/quickloops_og.jpg"> <!-- replace -->
-  <meta property="og:url" content="https://pmoneymusic.com/quickloops"> <!-- replace -->
-  <link rel="icon" href="/icons/favicon.ico"> <!-- replace -->
-  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"> <!-- replace -->
+  <meta property="og:image" content="img/quickloops_og.jpg"> 
+  <meta property="og:url" content="https://pmoneymusic.com/quickloops"> 
+  <link rel="icon" href="/icons/favicon.ico"> 
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"> 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFF03CTZZZ"></script>
   <script>
@@ -99,12 +99,6 @@
         var(--bg);
     }
 
-    .band-download{
-      background:
-        radial-gradient(1100px 560px at 50% -20%, rgba(0,113,227,0.10), transparent 60%),
-        var(--bg);
-    }
-
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
     .visually-hidden{position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
@@ -113,6 +107,7 @@
     .nav{
       position:sticky; top:0; z-index:50;
       backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
       background: color-mix(in oklab, var(--card) 90%, transparent);
       border-bottom: 1px solid var(--stroke);
     }
@@ -134,7 +129,7 @@
     .nav-links a{
       font-size:14px; color:var(--muted);
     }
-    /* Make the Download button text white in the header */
+    /* Make the Download/Beta button text white in the header */
     .nav-links a.btn-primary{
       color:#fff !important;         /* win over .nav-links a { color: var(--muted) } */
     }
@@ -172,7 +167,7 @@
       border:1px solid var(--stroke); background: color-mix(in oklab, var(--card) 95%, transparent);
     }
     .hero h1{
-      margin:18px auto 12px; max-width: 12ch;
+      margin:18px auto 12px; max-width: 14ch;
       font-size: clamp(40px, 6.2vw, 80px); line-height:1.02; letter-spacing:-0.02em;
     }
     .hero p{
@@ -216,7 +211,7 @@
     .card{
       grid-column: span 4;
       border:1px solid var(--stroke); border-radius: var(--radius); padding:22px;
-      background: var(--card); backdrop-filter: blur(8px);
+      background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
       min-height: 160px;
       display:flex; flex-direction:column; gap:10px;
     }
@@ -311,23 +306,6 @@
     .skip-link{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
     .skip-link:focus{position:static; width:auto; height:auto; padding:8px 12px; background:var(--card); border:1px solid var(--stroke); border-radius:8px}
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "QuickLoops",
-    "operatingSystem": "macOS",
-    "applicationCategory": "MultimediaApplication",
-    "description": "A simple, studio-grade loop pedal for macOS with zero-latency monitoring, MIDI Learn, and WAV export.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "url": "https://pmoneymusic.com/quickloops",
-    "screenshot": "https://your-domain.com/assets/quickloops_screen1.jpg"
-  }
-  </script>
 </head>
 
 <body>
@@ -338,14 +316,12 @@
     <div class="container nav-inner">
       <a href="/" class="brand" aria-label="Back to P-Money Home">
         <span class="brand-logo" aria-hidden="true"></span>
-        <span>QuickLoops Free</span>
+        <span>QuickLoops Pro</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#features">Features</a>
         <a href="#demo">Demo</a>
-        <a href="#faq">FAQ</a>
-        <a href="/quickloopspro-beta" class="btn btn-ghost">QuickLoopsPro Beta</a>
-        <a href="#download" class="btn btn-primary">Download</a>
+        <a href="/quickloopspro-beta/" class="btn btn-primary">Join Beta</a>
       </nav>
     </div>
   </header>
@@ -354,73 +330,70 @@
     <!-- ====== Hero ====== -->
     <section class="band band-hero">
       <div class="hero container">
-        <span class="eyebrow reveal">macOS · Apple Silicon & Intel</span>
-        <h1 class="reveal" style="transition-delay:.08s">A simple, studio-grade loop pedal for macOS.</h1>
+        <span class="eyebrow reveal">Coming Soon · macOS</span>
+        <h1 class="reveal" style="transition-delay:.08s">The professional loop station for macOS.</h1>
         <p class="reveal" style="transition-delay:.16s">
-          Capture an idea the instant it hits. Zero-latency recording, Instant playback,
-          WAV export, and MIDI/keyboard shortcuts — all in a distraction-free UI.
+          Studio-grade audio. Advanced MIDI control. Limitless creativity.<br>
+          The next evolution of QuickLoops is almost here.
         </p>
         <div class="hero-ctas reveal" style="transition-delay:.24s">
-          <a href="#download" class="btn btn-primary pulse" aria-label="Download QuickLoops Free for macOS">
-            <!-- inline SVG download icon -->
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.42L11 12.59V4a1 1 0 0 1 1-1ZM5 19a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5Z"/></svg>
-            Download QuickLoops Free
+          <a href="/quickloopspro-beta/" class="btn btn-primary pulse" aria-label="Join the QuickLoops Pro Beta">
+            Join the Beta
           </a>
-          <a href="#demo" class="btn btn-ghost" aria-label="Watch the QuickLoops demo">Watch demo</a>
+          <a href="#demo" class="btn btn-ghost" aria-label="Watch the QuickLoops demo">Watch teaser</a>
         </div>
-        <div class="sys-req reveal" style="transition-delay:.28s">Requires macOS 14 Sonoma or later · ~2 MB</div>
-
+        
         <!-- Device frame mock with screenshot -->
-        <div class="frame reveal" style="transition-delay:.34s" aria-label="QuickLoops app screenshot">
-          <img class="frame-img" src="assets/quickloops_screen1.jpg" alt="QuickLoops main window" />
+        <div class="frame reveal" style="transition-delay:.34s" aria-label="QuickLoops Pro app screenshot">
+          <img class="frame-img" src="assets/quickloops_screen1.jpg" alt="QuickLoops Pro main window" />
       </div>
     </section>
 
     <!-- ====== Feature Grid ====== -->
     <section class="band band-features">
       <div id="features" class="section container">
-        <h2 class="reveal">Less UI. More music.</h2>
-        <p class="lead reveal">Designed to feel invisible — so your loop becomes the instrument.</p>
+        <h2 class="reveal">Pro Power. Zero Clutter.</h2>
+        <p class="lead reveal">We've taken everything you loved about QuickLoops and elevated it.</p>
 
         <div class="grid">
           <article class="card reveal" style="transition-delay:.04s">
             <div class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a8 8 0 1 1-8 8h2a6 6 0 1 0 6-6V4Z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"/></svg>
             </div>
-            <h3>Zero-latency monitoring</h3>
-            <p>Record confidently with instant feedback via CoreAudio. No timing drift, no fuss.</p>
+            <h3>Dual Independent Decks</h3>
+            <p>Two separate looping engines. Route specific inputs and outputs for each deck independently.</p>
           </article>
 
           <article class="card reveal" style="transition-delay:.20s">
             <div class="icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h2v16H5V4Zm12 0h2v16h-2V4ZM9 9h6v6H9V9Z"/></svg>
             </div>
-            <h3>MIDI & shortcuts</h3>
-            <p>Map record/play/erase to your controller or keys instantly.</p>
+            <h3>MIDI Learn & Speed Control</h3>
+            <p>Map any controller instantly. Control transport, clear loops, and manipulate playback speed like tape.</p>
           </article>
 
           <article class="card reveal" style="transition-delay:.24s">
             <div class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h14v10H9l-4 4V5Z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M3 17v2h6v-2H3M3 5v2h10V5H3m10 16v-2h8v-2h-8v-2h-2v6h2M7 9v2H3v2h4v2h2V9H7m14 4v-2H11v2h10m-6-4h2V7h4V5h-4V3h-2v6z"/></svg>
             </div>
-            <h3>Export WAV</h3>
-            <p>Bounce loops to pristine 24-bit WAV for your DAW, samplers, or sharing.</p>
+            <h3>Pro Audio Routing</h3>
+            <p>Designed for DJ mixers. Configurable input/output routing per deck with zero-latency input monitoring.</p>
           </article>
         </div>
 
         <div class="media">
           <div class="text reveal" style="transition-delay:.08s">
             <h3 style="margin:0 0 8px; font-size:26px;">Built for Apple Silicon</h3>
-            <p class="subtle">Optimized signal path and UI rendering. Whisper-light on CPU, heavy on feel.</p>
+            <p class="subtle">Optimized from the ground up for M1, M2, M3, and M4 chips. Incredible performance with minimal CPU usage.</p>
             <ul class="subtle" style="margin:12px 0 0; padding-left:18px; line-height:1.7">
-              <li>Native arm64 & Intel builds</li>
-              <li>CoreAudio I/O with live input monitor toggle</li>
-              <li>Auto-save sessions, small footprint</li>
+              <li>Native performance</li>
+              <li>Ultra-low latency CoreAudio</li>
+              <li>Professional reliability</li>
             </ul>
             <div class="stripe reveal" style="transition-delay:.16s">
-              <p>Freeware. No ads. No sign-up.</p>
+              <p>Be the first to experience it.</p>
               <div class="hero-ctas">
-                <a href="#download" class="btn btn-primary">Get QuickLoops Free</a>
+                <a href="/quickloopspro-beta/" class="btn btn-primary">Join the Beta</a>
               </div>
             </div>
           </div>
@@ -431,9 +404,8 @@
     <section class="band band-demo">
       <div id="demo" class="section container">
         <h2 class="reveal">See it in action.</h2>
-        <p class="lead reveal">A quick demo of instant loop recording.</p>
+        <p class="lead reveal">A sneak peek at the new workflow.</p>
         <div class="reveal" style="transition-delay:.08s; border-radius: var(--radius); overflow:hidden; border:1px solid var(--stroke); box-shadow: var(--glow)">
-          <!-- Replace with your hosted MP4; keep muted+playsinline for iOS -->
           <video controls playsinline muted poster="assets/quickloops_poster.jpg" style="width:100%; display:block;">
             <source src="assets/quickloops_demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -441,96 +413,29 @@
       </div>
     </section>
 
-    <!-- ====== Testimonials ====== -->
-    <section class="band band-testimonials">
-      <div class="section container">
-        <h2 class="reveal">Loved by producers & performers.</h2>
-        <div class="testi">
-          <article class="quote reveal" style="transition-delay:.04s">
-            <div class="avatar" aria-hidden="true"></div>
-            <div>
-              <blockquote>“It’s the fastest way I’ve found to capture and loop an idea. No friction, just music.”</blockquote>
-              <cite>— Beta tester, songwriter</cite>
-            </div>
-          </article>
-          <article class="quote reveal" style="transition-delay:.08s">
-            <div class="avatar" aria-hidden="true"></div>
-            <div>
-              <blockquote>“QuickLoops is dope for grabbing super quick sample ideas from vinyl.”</blockquote>
-              <cite>— Producer</cite>
-            </div>
-          </article>
+    <!-- ====== Footer ====== -->
+    <footer class="container">
+      <div class="footgrid">
+        <div class="footcol">
+          <h4>QuickLoops Pro</h4>
+          <p class="subtle">The professional loop station for macOS.</p>
+        </div>
+        <div class="footcol">
+          <h4>Explore</h4>
+          <a href="#features">Features</a>
+          <a href="#demo">Demo</a>
+          <a href="/quickloopspro-beta/">Beta Access</a>
+        </div>
+        <div class="footcol">
+          <h4>Support</h4>
+          <a href="mailto:cliquey.plums-8q@icloud.com">Email</a>
+        </div>
       </div>
-    </section>
-
-    <!-- ====== FAQ / Download ====== -->
-    <section class="band band-download">
-      <div id="download" class="section container">
-        <div class="grid">
-          <div class="card reveal" style="grid-column: span 7; transition-delay:.04s">
-            <h3 style="margin:0 0 10px; font-size:22px">Download QuickLoops Free</h3>
-            <p class="subtle" style="margin:0 0 16px">Support for Apple Silicon (M1/M2/M3/M4) or Intel Macs.</p>
-            <div class="hero-ctas">
-              <!-- Replace hrefs with your actual DMG links -->
-              <a class="btn btn-primary" href="downloads/QuickLoops_Installer.dmg" data-source="quickloops" data-track-download="quickloops">Download · Latest Build</a>
-            </div>
-            <p class="subtle" style="margin-top:10px">Code-signed & notarized. Drag-and-drop install.</p>
-            <hr style="border:none; border-top:1px solid var(--stroke); margin:18px 0">
-            <details>
-              <summary><strong>Release notes</strong></summary>
-              <ul class="subtle">
-                <li>v1.0.0 — Initial release: record, instant playback, WAV export, MIDI mapping.</li>
-              </ul>
-            </details>
-          </div>
-
-          <div class="card reveal" style="grid-column: span 5; transition-delay:.08s">
-            <h3 style="margin:0 0 10px; font-size:22px" id="faq">FAQ</h3>
-            <details open>
-              <summary><strong>Is it really free?</strong></summary>
-              <p class="subtle">Yes. QuickLoops is freeware. If you love it, consider a tip or sharing with a friend.</p>
-            </details>
-            <details>
-              <summary><strong>What are the system requirements?</strong></summary>
-              <p class="subtle">macOS 14 Sonoma or later. Works on Apple Silicon and Intel. CoreAudio device recommended.</p>
-            </details>
-            <details>
-              <summary><strong>Does it support MIDI?</strong></summary>
-              <p class="subtle">Yes — map transport and key actions to your controller. Plug and play.</p>
-            </details>
-            <details>
-              <summary><strong>How do I uninstall?</strong></summary>
-              <p class="subtle">Quit the app and delete it from Applications. Preferences live in <code>~/Library/Preferences</code>.</p>
-            </details>
-          </div>
+      <div class="legal">
+        <span>© <span id="year"></span> QuickLoops</span>
+        <span><span class="subtle">Created by </span><a href="https://pmoneymusic.com">pmoneymusic.com</a></span>
       </div>
-    </section>
-  </main>
-
-  <footer class="container">
-    <div class="footgrid">
-      <div class="footcol">
-        <h4>QuickLoops Free</h4>
-        <p class="subtle">A minimal loop pedal for macOS.</p>
-      </div>
-      <div class="footcol">
-        <h4>Product</h4>
-        <a href="#features">Features</a>
-        <a href="#demo">Demo</a>
-        <a href="#download">Download</a>
-      </div>
-      <div class="footcol">
-        <h4>Support</h4>
-        <a href="mailto:cliquey.plums-8q@icloud.com">Email</a>
-        <a href="https://github.com/pmoneynz/website">GitHub</a>
-        <a href="https://github.com/pmoneynz/website/blob/main/README.md">Docs</a>
-      </div>
-    </div>
-    <div class="legal">
-      <span>© <span id="year"></span> QuickLoops</span>
-      <span><span class="subtle">Created by </span><a href="https://pmoneymusic.com">pmoneymusic.com</a></span>
-    </div>
-  </footer>
+    </footer>
 
   <script>
     // Reveal on scroll
@@ -552,14 +457,6 @@
         }
       });
     });
-
-    // Download tracking is now handled by /js/analytics.js
-    // Legacy function kept for backwards compatibility
-    function trackDownload(filename, source) {
-      if (window.pmoneyAnalytics && window.pmoneyAnalytics.trackDownload) {
-        window.pmoneyAnalytics.trackDownload(filename, source);
-      }
-    }
   </script>
 </body>
 </html>
