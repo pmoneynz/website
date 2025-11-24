@@ -25,6 +25,12 @@
       page_location: window.location.href
     });
   </script>
+  
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "C-MVCt1JKzcRNlfPm3-OWg4466PFvHqQ4ldC_Cgg"}'></script>
+  
+  <!-- Custom Analytics & Download Tracking -->
+  <script src="/js/analytics.js"></script>
   <style>
     /* ====== Base / Type ====== */
     :root{
@@ -466,7 +472,7 @@
             <p class="subtle" style="margin:0 0 16px">Support for Apple Silicon (M1/M2/M3/M4) or Intel Macs.</p>
             <div class="hero-ctas">
               <!-- Replace hrefs with your actual DMG links -->
-              <a class="btn btn-primary" href="downloads/QuickLoops_Installer.dmg" onclick="trackDownload('QuickLoops_Installer.dmg', 'quickloops')">Download · Latest Build</a>
+              <a class="btn btn-primary" href="downloads/QuickLoops_Installer.dmg" data-source="quickloops" data-track-download="quickloops">Download · Latest Build</a>
             </div>
             <p class="subtle" style="margin-top:10px">Code-signed & notarized. Drag-and-drop install.</p>
             <hr style="border:none; border-top:1px solid var(--stroke); margin:18px 0">
@@ -547,55 +553,11 @@
       });
     });
 
-    // Enhanced download tracking function for GitHub Pages
+    // Download tracking is now handled by /js/analytics.js
+    // Legacy function kept for backwards compatibility
     function trackDownload(filename, source) {
-      // Create tracking data object
-      const trackingData = {
-        event: "download",
-        file: filename,
-        source: source,
-        timestamp: new Date().toISOString(),
-        page: window.location.pathname,
-        referrer: document.referrer,
-        userAgent: navigator.userAgent
-      };
-
-      // Enhanced Google Analytics 4 tracking
-      if (typeof gtag !== "undefined") {
-        // Main download event
-        gtag("event", "file_download", {
-          "file_name": filename,
-          "file_extension": filename.split(".").pop(),
-          "download_source": source,
-          "page_location": window.location.href,
-          "page_title": document.title
-        });
-
-        // Custom QuickLoops download event
-        gtag("event", "quickloops_download", {
-          "event_category": "QuickLoops",
-          "event_label": source,
-          "value": 1
-        });
-
-        // Track user engagement
-        gtag("event", "engagement", {
-          "engagement_time_msec": Date.now()
-        });
-      }
-
-      // Log to console for debugging
-      console.log("Download tracked:", trackingData);
-
-      // Store in localStorage for backup analytics
-      try {
-        const downloads = JSON.parse(localStorage.getItem("pmoneyDownloads") || "[]");
-        downloads.push(trackingData);
-        // Keep only last 100 downloads to avoid storage bloat
-        if (downloads.length > 100) downloads.splice(0, downloads.length - 100);
-        localStorage.setItem("pmoneyDownloads", JSON.stringify(downloads));
-      } catch (e) {
-        console.log("Local storage unavailable");
+      if (window.pmoneyAnalytics && window.pmoneyAnalytics.trackDownload) {
+        window.pmoneyAnalytics.trackDownload(filename, source);
       }
     }
   </script>
