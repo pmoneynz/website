@@ -417,12 +417,11 @@
       .nav-links{
         position:absolute; top:64px; left:0; right:0;
         flex-direction:column; gap:16px;
-        background:var(--card);
-        backdrop-filter:saturate(180%) blur(16px);
-        -webkit-backdrop-filter:saturate(180%) blur(16px);
+        background:var(--bg);
         border-bottom:1px solid var(--stroke);
         padding:16px 24px;
         display:none;
+        box-shadow:0 8px 24px rgba(0,0,0,0.15);
       }
       .nav-links.open{display:flex}
       .nav-links a{width:100%; text-align:center; padding:8px 0}
