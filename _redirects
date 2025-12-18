@@ -1,3 +1,2 @@
-# Subdomain routing for Cloudflare Pages
-# Serve quickloopspro subdomain from /quickloopspro/ folder
-https://quickloopspro.pmoneymusic.com/* /quickloopspro/:splat 200
+# Subdomain routing is now handled by functions/_middleware.js
+# The middleware routes quickloopspro.pmoneymusic.com to /quickloopspro/ folder
