@@ -4,8 +4,7 @@
  */
 
 export async function onRequest(context) {
-  const { request, next } = context;
-  const url = new URL(request.url);
+  const url = new URL(context.request.url);
   const hostname = url.hostname;
 
   // Check if request is for quickloopspro subdomain
@@ -14,7 +13,7 @@ export async function onRequest(context) {
     
     // Don't interfere with API routes
     if (pathname.startsWith('/api/')) {
-      return next();
+      return context.next();
     }
     
     // Rewrite path to /quickloopspro/ prefix
@@ -38,12 +37,16 @@ export async function onRequest(context) {
       }
     }
     
-    // Use rewrite to change the path
-    return next({
-      request: new Request(new URL(newPathname, url.origin), request),
-    });
+    // Create new URL with rewritten path
+    url.pathname = newPathname;
+    
+    // Create new request with modified URL
+    const modifiedRequest = new Request(url.toString(), context.request);
+    
+    // Forward the modified request
+    return context.next(modifiedRequest);
   }
   
   // For all other domains, pass through normally
-  return next();
+  return context.next();
 }
