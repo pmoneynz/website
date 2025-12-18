@@ -209,7 +209,7 @@
   </div>
 
   <script>
-    const DOWNLOAD_URL = '/beta/QuickLoopsPro-1.0-b1.dmg';
+    const DOWNLOAD_URL = '/quickloopspro/releases/QuickLoopsPro-v1.2.dmg';
     const downloadBtn = document.getElementById('downloadBtn');
     const downloadState = document.getElementById('downloadState');
     const thankYouState = document.getElementById('thankYouState');
@@ -219,8 +219,8 @@
       if (typeof gtag !== 'undefined') {
         gtag('event', 'file_download', {
           event_category: 'QuickLoopsPro',
-          event_label: 'QuickLoopsPro-1.0-b1.dmg',
-          file_name: 'QuickLoopsPro-1.0-b1.dmg',
+          event_label: 'QuickLoopsPro-v1.2.dmg',
+          file_name: 'QuickLoopsPro-v1.2.dmg',
           file_extension: 'dmg',
           link_url: DOWNLOAD_URL
         });
@@ -228,13 +228,13 @@
       
       // Track with custom analytics
       if (typeof window.pmoneyAnalytics !== 'undefined') {
-        window.pmoneyAnalytics.trackDownload('QuickLoopsPro-1.0-b1.dmg', 'email_download', DOWNLOAD_URL);
+        window.pmoneyAnalytics.trackDownload('QuickLoopsPro-v1.2.dmg', 'email_download', DOWNLOAD_URL);
       }
       
       // Start download
       const link = document.createElement('a');
       link.href = DOWNLOAD_URL;
-      link.download = 'QuickLoopsPro-1.0-b1.dmg';
+      link.download = 'QuickLoopsPro-v1.2.dmg';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
