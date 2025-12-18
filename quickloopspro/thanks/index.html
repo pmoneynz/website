@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | QuickLoops Pro</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFF03CTZZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-DFF03CTZZZ", {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
+  
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token":"C-MVCt1JKzcRNlfPm3-OWg4466PFvHqQ4ldC_Cgg"}'></script>
+  
+  <!-- Custom Analytics & Download Tracking -->
+  <script src="/js/analytics.js"></script>
+  
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #6b6b6f;
+      --accent: #0071e3;
+      --card: rgba(255,255,255,0.7);
+      --stroke: rgba(0,0,0,0.08);
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0c0c0d;
+        --fg: #fbfbfc;
+        --muted: #a8a8ad;
+        --card: rgba(22,22,24,0.6);
+        --stroke: rgba(255,255,255,0.12);
+      }
+    }
+
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+                   "Geist", "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:var(--fg);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 480px;
+      padding: 40px;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(800px 400px at 50% -20%, rgba(0,113,227,0.15), transparent 80%),
+        var(--bg);
+      border: 1px solid var(--stroke);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 32px;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #1f86ff, #0071e3);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    /* Success checkmark animation */
+    .check-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      color: #34c759;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    
+    <h1>Check your email!</h1>
+    <p>We've sent you the download link for QuickLoops Pro. Check your inbox (and spam folder) for the email.</p>
+    <p style="font-size: 16px; margin-top: 24px;">You'll also receive updates as we add new features during active development.</p>
+    
+    <a href="/" class="btn">Back to Home</a>
+  </div>
+
+</body>
+</html>

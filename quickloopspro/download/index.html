@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download QuickLoops Pro</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/icons/favicon.ico"> 
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFF03CTZZZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-DFF03CTZZZ", {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
+  
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "C-MVCt1JKzcRNlfPm3-OWg4466PFvHqQ4ldC_Cgg"}'></script>
+  
+  <!-- Custom Analytics & Download Tracking -->
+  <script src="/js/analytics.js"></script>
+  
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #6b6b6f;
+      --accent: #0071e3;
+      --card: rgba(255,255,255,0.7);
+      --stroke: rgba(0,0,0,0.08);
+      --radius: 16px;
+      --glow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0c0d;
+        --fg: #fbfbfc;
+        --muted: #a8a8ad;
+        --card: rgba(22,22,24,0.6);
+        --stroke: rgba(255,255,255,0.12);
+        --glow: 0 20px 60px rgba(0,0,0,0.6);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+                   "Geist", "Inter", "Helvetica Neue", Arial, sans-serif;
+      color: var(--fg);
+      background: 
+        radial-gradient(1200px 600px at 50% -10%, rgba(0,113,227,0.10), transparent 60%),
+        var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 480px;
+      padding: 48px 40px;
+      border-radius: var(--radius);
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--glow);
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0a84ff, #7af);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 32px;
+      font-size: 16px;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: 0;
+      background: linear-gradient(180deg, #1f86ff, #0071e3);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      font-family: inherit;
+    }
+    .btn-download:hover {
+      transform: translateY(-1px);
+    }
+    .btn-download:active {
+      transform: translateY(0);
+    }
+
+    .requirements {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--stroke);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Thank you state */
+    #downloadState, #thankYouState {
+      transition: opacity 0.3s ease;
+    }
+    #thankYouState {
+      display: none;
+    }
+    #thankYouState.show {
+      display: block;
+    }
+    #downloadState.hide {
+      display: none;
+    }
+
+    .check-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      color: #34c759;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Download State -->
+    <div id="downloadState">
+      <div class="logo" aria-hidden="true"></div>
+      <h1>QuickLoops Pro</h1>
+      <p>The professional loop station for macOS.<br>Click below to start your download.</p>
+      
+      <button class="btn-download" id="downloadBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download QuickLoops Pro
+      </button>
+      
+      <div class="requirements">
+        <strong>Requirements:</strong> macOS 12.0 or later, Apple Silicon or Intel
+      </div>
+    </div>
+    
+    <!-- Thank You State -->
+    <div id="thankYouState">
+      <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+      
+      <h1>Download Started!</h1>
+      <p>QuickLoops Pro is downloading now.<br>Check your Downloads folder.</p>
+      
+      <div class="requirements">
+        <strong>Installation:</strong> Open the .dmg file and drag QuickLoops Pro to your Applications folder.
+      </div>
+      
+      <a href="https://pmoneymusic.com" class="back-link">Visit pmoneymusic.com</a>
+    </div>
+    
+  </div>
+
+  <script>
+    const DOWNLOAD_URL = '/quickloopspro/beta/QuickLoopsPro-1.0-b1.dmg';
+    const downloadBtn = document.getElementById('downloadBtn');
+    const downloadState = document.getElementById('downloadState');
+    const thankYouState = document.getElementById('thankYouState');
+    
+    function startDownload() {
+      // Track download in Google Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'file_download', {
+          event_category: 'QuickLoopsPro',
+          event_label: 'QuickLoopsPro-1.0-b1.dmg',
+          file_name: 'QuickLoopsPro-1.0-b1.dmg',
+          file_extension: 'dmg',
+          link_url: DOWNLOAD_URL
+        });
+      }
+      
+      // Track with custom analytics
+      if (typeof window.pmoneyAnalytics !== 'undefined') {
+        window.pmoneyAnalytics.trackDownload('QuickLoopsPro-1.0-b1.dmg', 'email_download', DOWNLOAD_URL);
+      }
+      
+      // Start download
+      const link = document.createElement('a');
+      link.href = DOWNLOAD_URL;
+      link.download = 'QuickLoopsPro-1.0-b1.dmg';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Show thank you state
+      downloadState.classList.add('hide');
+      thankYouState.classList.add('show');
+    }
+    
+    downloadBtn.addEventListener('click', startDownload);
+  </script>
+</body>
+</html>
