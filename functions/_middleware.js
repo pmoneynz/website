@@ -16,29 +16,35 @@ export async function onRequest(context) {
       return context.next();
     }
     
-    // Redirect /quickloopspro/* paths to root (clean URLs)
+    // If path already starts with /quickloopspro/, handle it:
+    // - Paths with file extensions: pass through (internal rewrites)
+    // - Directory paths: redirect to clean URLs
     if (pathname.startsWith('/quickloopspro/') || pathname === '/quickloopspro') {
-      const cleanPath = pathname.replace(/^\/quickloopspro\/?/, '/');
-      url.pathname = cleanPath || '/';
-      return Response.redirect(url.toString(), 301);
+      if (pathname.includes('.')) {
+        // Has file extension - this is an internal rewrite, pass through
+        return context.next();
+      } else {
+        // No file extension - redirect to clean URL
+        const cleanPath = pathname.replace(/^\/quickloopspro\/?/, '/');
+        url.pathname = cleanPath || '/';
+        return Response.redirect(url.toString(), 301);
+      }
     }
     
     // Rewrite path to /quickloopspro/ prefix (internal rewrite, not visible to user)
     let newPathname;
     if (pathname === '/' || pathname === '') {
       newPathname = '/quickloopspro/index.html';
-    } else {
-      // Add /quickloopspro/ prefix
+    } else if (pathname.includes('.')) {
+      // Has file extension - just add prefix
       newPathname = '/quickloopspro' + pathname;
-      
-      // If it's a directory path without extension, try index.html
-      if (!pathname.includes('.')) {
-        // Check if it ends with /, if not add it
-        if (!newPathname.endsWith('/')) {
-          newPathname += '/';
-        }
-        newPathname += 'index.html';
+    } else {
+      // Directory path - add prefix and index.html
+      newPathname = '/quickloopspro' + pathname;
+      if (!newPathname.endsWith('/')) {
+        newPathname += '/';
       }
+      newPathname += 'index.html';
     }
     
     // Create new URL with rewritten path
