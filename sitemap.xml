@@ -4,25 +4,21 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://www.pmoneymusic.com/</loc>
-  <lastmod>2025-03-07T19:49:32+00:00</lastmod>
+  <lastmod>2025-12-18</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.pmoneymusic.com/sequencer.html</loc>
-  <lastmod>2025-03-07T19:50:40+00:00</lastmod>
+  <loc>https://www.pmoneymusic.com/about</loc>
+  <lastmod>2025-12-18</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.pmoneymusic.com/index.html</loc>
-  <lastmod>2025-03-07T19:49:32+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://www.pmoneymusic.com/sequencer.html</loc>
+  <lastmod>2025-12-18</lastmod>
+  <priority>0.60</priority>
 </url>
-
-
 
 </urlset>
