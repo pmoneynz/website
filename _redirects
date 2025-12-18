@@ -1,0 +1,3 @@
+# Subdomain routing for Cloudflare Pages
+# Serve quickloopspro subdomain from /quickloopspro/ folder
+https://quickloopspro.pmoneymusic.com/* /quickloopspro/:splat 200
