@@ -16,13 +16,17 @@ export async function onRequest(context) {
       return context.next();
     }
     
-    // Rewrite path to /quickloopspro/ prefix
+    // Redirect /quickloopspro/* paths to root (clean URLs)
+    if (pathname.startsWith('/quickloopspro/') || pathname === '/quickloopspro') {
+      const cleanPath = pathname.replace(/^\/quickloopspro\/?/, '/');
+      url.pathname = cleanPath || '/';
+      return Response.redirect(url.toString(), 301);
+    }
+    
+    // Rewrite path to /quickloopspro/ prefix (internal rewrite, not visible to user)
     let newPathname;
     if (pathname === '/' || pathname === '') {
       newPathname = '/quickloopspro/index.html';
-    } else if (pathname.startsWith('/quickloopspro/')) {
-      // Already has prefix, don't double it
-      newPathname = pathname;
     } else {
       // Add /quickloopspro/ prefix
       newPathname = '/quickloopspro' + pathname;
