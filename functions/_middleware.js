@@ -16,45 +16,31 @@ export async function onRequest(context) {
       return context.next();
     }
     
-    // If path already starts with /quickloopspro/, handle it:
-    // - Paths with file extensions: pass through (internal rewrites)
-    // - Directory paths: redirect to clean URLs
-    if (pathname.startsWith('/quickloopspro/') || pathname === '/quickloopspro') {
-      if (pathname.includes('.')) {
-        // Has file extension - this is an internal rewrite, pass through
-        return context.next();
-      } else {
-        // No file extension - redirect to clean URL
-        const cleanPath = pathname.replace(/^\/quickloopspro\/?/, '/');
-        url.pathname = cleanPath || '/';
-        return Response.redirect(url.toString(), 301);
-      }
+    // Redirect /quickloopspro/* paths to clean URLs (user-facing only, not file paths)
+    if ((pathname.startsWith('/quickloopspro/') || pathname === '/quickloopspro') && !pathname.includes('.')) {
+      const cleanPath = pathname.replace(/^\/quickloopspro\/?/, '/');
+      url.pathname = cleanPath || '/';
+      return Response.redirect(url.toString(), 301);
     }
     
-    // Rewrite path to /quickloopspro/ prefix (internal rewrite, not visible to user)
-    let newPathname;
+    // Build the asset path
+    let assetPath;
     if (pathname === '/' || pathname === '') {
-      newPathname = '/quickloopspro/index.html';
+      assetPath = '/quickloopspro/index.html';
     } else if (pathname.includes('.')) {
-      // Has file extension - just add prefix
-      newPathname = '/quickloopspro' + pathname;
+      assetPath = '/quickloopspro' + pathname;
     } else {
       // Directory path - add prefix and index.html
-      newPathname = '/quickloopspro' + pathname;
-      if (!newPathname.endsWith('/')) {
-        newPathname += '/';
+      assetPath = '/quickloopspro' + pathname;
+      if (!assetPath.endsWith('/')) {
+        assetPath += '/';
       }
-      newPathname += 'index.html';
+      assetPath += 'index.html';
     }
     
-    // Create new URL with rewritten path
-    url.pathname = newPathname;
-    
-    // Create new request with modified URL
-    const modifiedRequest = new Request(url.toString(), context.request);
-    
-    // Forward the modified request
-    return context.next(modifiedRequest);
+    // Fetch the asset directly (bypasses middleware loop)
+    const assetUrl = new URL(assetPath, url.origin);
+    return context.env.ASSETS.fetch(assetUrl);
   }
   
   // For all other domains, pass through normally
