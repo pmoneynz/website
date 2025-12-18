@@ -142,6 +142,12 @@
       background: transparent; color:var(--fg);
     }
 
+    /* Hamburger button - hidden on desktop */
+    .nav-toggle{
+      display:none; background:none; border:none;
+      padding:8px; cursor:pointer; color:var(--fg);
+    }
+
     /* ====== Hero ====== */
     .hero{
       padding: 80px 0 40px;
@@ -407,6 +413,19 @@
     }
     @media (max-width: 640px){
       .nav-inner{padding:0 6px}
+      .nav-toggle{display:flex}
+      .nav-links{
+        position:absolute; top:64px; left:0; right:0;
+        flex-direction:column; gap:16px;
+        background:var(--card);
+        backdrop-filter:saturate(180%) blur(16px);
+        -webkit-backdrop-filter:saturate(180%) blur(16px);
+        border-bottom:1px solid var(--stroke);
+        padding:16px 24px;
+        display:none;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{width:100%; text-align:center; padding:8px 0}
       .hero{padding:64px 0 28px}
       .card{grid-column: span 12}
       .footcol{grid-column: span 12}
@@ -444,6 +463,13 @@
         <span class="brand-logo" aria-hidden="true"></span>
         <span>QuickLoops Pro</span>
       </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
       <nav class="nav-links" aria-label="Primary">
         <a href="#features">Features</a>
         <a href="/docs/Quick_Start_Guide.pdf" download>Docs</a>
@@ -720,6 +746,23 @@
         }
       });
     });
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+      // Close menu when a link is clicked
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
     // Email form handling
     (function() {
