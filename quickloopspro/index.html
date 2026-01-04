@@ -17,14 +17,15 @@
   <link rel="canonical" href="https://quickloopspro.pmoneymusic.com/" />
   
   <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFF03CTZZZ"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43N0T5ZK1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
-    gtag("config", "G-DFF03CTZZZ", {
+    gtag("config", "G-H43N0T5ZK1", {
       page_title: document.title,
-      page_location: window.location.href
+      page_location: window.location.href,
+      content_group: "quickloopspro"
     });
   </script>
   
@@ -480,7 +481,7 @@
 
   <main id="main">
     <!-- ====== Hero ====== -->
-    <section class="band band-hero">
+    <section class="band band-hero" id="hero" data-track-section>
       <div class="hero container">
         <span class="eyebrow reveal">Free During Active Development · macOS</span>
         <h1 class="reveal" style="transition-delay:.08s">Instant Capture & Loop Playback</h1>
@@ -493,8 +494,8 @@
         </p>
         
         <div class="hero-ctas reveal" style="transition-delay:.20s">
-          <a href="#demo" class="btn btn-ghost">Watch Demo</a>
-          <a href="#how-it-works" class="btn btn-ghost">How It Works</a>
+          <a href="#demo" class="btn btn-ghost" data-track-click="qlp_hero_demo">Watch Demo</a>
+          <a href="#how-it-works" class="btn btn-ghost" data-track-click="qlp_hero_howworks">How It Works</a>
         </div>
         
         <!-- Email capture form -->
@@ -543,7 +544,7 @@
     </section>
 
     <!-- ====== Demo Video ====== -->
-    <section id="demo" class="band video-section">
+    <section id="demo" class="band video-section" data-track-section>
       <div class="container">
         <h2 class="reveal">See It In Action</h2>
         <p class="reveal" style="transition-delay:.08s">capture vinyl → loop → perform.</p>
@@ -560,7 +561,7 @@
     </section>
 
     <!-- ====== How It Works ====== -->
-    <section id="how-it-works" class="band steps-section">
+    <section id="how-it-works" class="band steps-section" data-track-section>
       <div class="container">
         <h2 class="reveal">The Breakthrough: Instant Capture</h2>
         <p class="lead reveal" style="transition-delay:.08s">Most software loopers require menus, tracks, timelines, and configuration. QuickLoops Pro does none of that.</p>
@@ -590,7 +591,7 @@
     </section>
 
     <!-- ====== Feature Grid ====== -->
-    <section class="band band-features">
+    <section class="band band-features" id="features-section" data-track-section>
       <div id="features" class="section container">
         <h2 class="reveal">Core Features — Built Around Performance</h2>
         <p class="lead reveal">A DJ-style approach — not a DAW approach.</p>
@@ -624,7 +625,7 @@
     </section>
 
     <!-- ====== Use Cases ====== -->
-    <section class="band">
+    <section class="band" id="use-cases" data-track-section>
       <div class="section container" style="text-align:center">
         <h2 class="reveal">Built for Turntables & DJ Mixers</h2>
         <p class="lead reveal" style="transition-delay:.08s">The only looper that fits naturally into a DJ-style signal chain.</p>
@@ -644,7 +645,7 @@
     </section>
 
     <!-- ====== FAQ ====== -->
-    <section class="band">
+    <section class="band" id="faq-section" data-track-section>
       <div id="faq" class="section container">
         <h2 class="reveal" style="text-align:center">Frequently Asked Questions</h2>
         
@@ -674,24 +675,24 @@
     </section>
 
     <!-- ====== Beta Feedback ====== -->
-    <section class="band">
+    <section class="band" id="feedback" data-track-section>
       <div class="section container" style="text-align:center">
         <h2 class="reveal">Help Shape QuickLoops Pro</h2>
         <p class="lead reveal" style="transition-delay:.08s">We're actively developing based on real DJ feedback. Try it and tell us what you think.</p>
         
-        <a href="mailto:support@pmoneymusic.com" class="btn btn-ghost reveal" style="transition-delay:.16s">
+        <a href="mailto:support@pmoneymusic.com" class="btn btn-ghost reveal" style="transition-delay:.16s" data-track-click="qlp_feedback_email">
           Send Feedback
         </a>
       </div>
     </section>
 
     <!-- ====== Bottom CTA ====== -->
-    <section class="band band-hero">
+    <section class="band band-hero" id="bottom-cta" data-track-section>
       <div class="section container" style="text-align:center">
         <h2 class="reveal">Ready to Loop?</h2>
         <p class="lead reveal" style="transition-delay:.08s">QuickLoops Pro is free during active development. Get the latest build now.</p>
         
-        <a href="#main" class="btn btn-primary pulse reveal" style="transition-delay:.16s">
+        <a href="#main" class="btn btn-primary pulse reveal" style="transition-delay:.16s" data-track-click="qlp_bottom_cta">
           Get the Download Link
         </a>
       </div>

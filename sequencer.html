@@ -3,32 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Web Sampler | P-Money Music</title>
+    <meta name="description" content="Free online audio sampler with waveform display and cue points. Create beats directly in your browser." />
+    <link rel="canonical" href="https://www.pmoneymusic.com/sequencer.html" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/icons/favicon.ico" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Web Sampler | P-Money Music" />
+    <meta property="og:description" content="Free online audio sampler with waveform display and cue points." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.pmoneymusic.com/sequencer.html" />
+    <meta property="og:image" content="https://www.pmoneymusic.com/img/social-1200x630.jpg" />
+    
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFF03CTZZZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43N0T5ZK1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
-      gtag("config", "G-DFF03CTZZZ", {
+      gtag("config", "G-H43N0T5ZK1", {
         page_title: document.title,
-        page_location: window.location.href
+        page_location: window.location.href,
+        content_group: "web_sampler"
       });
-    </script></head>
+    </script>
+    
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "C-MVCt1JKzcRNlfPm3-OWg4466PFvHqQ4ldC_Cgg"}'></script>
+    
+    <!-- Custom Analytics -->
+    <script src="/js/analytics.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <div class="app-container">
         <header style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <h1 style="margin: 0;" class="btn btn-primary">SAMPLER</h1>
             <nav style="display: flex; gap: 12px; margin-left: auto;">
-                <a href="/about" class="btn btn-secondary">About</a>
-                <a href="/" class="btn btn-secondary">Home ↗</a>
+                <a href="/about" class="btn btn-secondary" data-track-click="sampler_nav_about">About</a>
+                <a href="/" class="btn btn-secondary" data-track-click="sampler_nav_home">Home ↗</a>
             </nav>
         </header>
         
-        <section class="file-upload-section">
+        <section class="file-upload-section" id="upload-section" data-track-section>
             <div class="upload-container">
-                <label for="audioFile" class="upload-btn">
+                <label for="audioFile" class="upload-btn" data-track-click="sampler_upload_button">
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/>
                     </svg>
@@ -39,7 +63,7 @@
             </div>
         </section>
 
-        <section class="waveform-section">
+        <section class="waveform-section" id="waveform-section" data-track-section>
             <div class="waveform-container">
                 <canvas id="waveform"></canvas>
                 <div id="empty-state" class="empty-state">
@@ -52,14 +76,14 @@
             </div>
         </section>
 
-        <section class="controls-section">
+        <section class="controls-section" id="controls-section" data-track-section>
             <div class="transport-controls">
-                <button id="playBtn" class="control-btn play-btn" disabled>
+                <button id="playBtn" class="control-btn play-btn" disabled data-track-click="sampler_play">
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"/>
                     </svg>
                 </button>
-                <button id="stopBtn" class="control-btn stop-btn" disabled>
+                <button id="stopBtn" class="control-btn stop-btn" disabled data-track-click="sampler_stop">
                     <svg class="icon" viewBox="0 0 24 24">
                         <path d="M6 6h12v12H6z"/>
                     </svg>
@@ -67,7 +91,7 @@
             </div>
         </section>
 
-        <section class="cue-points-section">
+        <section class="cue-points-section" id="cue-section" data-track-section>
             <h2>Cue Points</h2>
             <div class="cue-instructions">
                 <p>Click on waveform to add cue points. Press the letter key shown on each cue point to trigger it. Shift+click on cue button to remove.</p>
@@ -79,5 +103,93 @@
     </div>
 
     <script src="script.js"></script>
+    
+    <!-- Sampler-specific analytics -->
+    <script>
+    (function() {
+      // Track audio file uploads
+      const audioInput = document.getElementById('audioFile');
+      if (audioInput) {
+        audioInput.addEventListener('change', function(e) {
+          const file = e.target.files[0];
+          if (file && typeof gtag !== 'undefined') {
+            gtag('event', 'sampler_file_loaded', {
+              event_category: 'WebSampler',
+              file_type: file.type,
+              file_size_kb: Math.round(file.size / 1024),
+              file_name: file.name.replace(/[^a-zA-Z0-9._-]/g, '_').substring(0, 50)
+            });
+          }
+        });
+      }
+
+      // Track play button usage
+      const playBtn = document.getElementById('playBtn');
+      if (playBtn) {
+        playBtn.addEventListener('click', function() {
+          if (!this.disabled && typeof gtag !== 'undefined') {
+            gtag('event', 'sampler_playback', {
+              event_category: 'WebSampler',
+              action: 'play'
+            });
+          }
+        });
+      }
+
+      // Track stop button usage
+      const stopBtn = document.getElementById('stopBtn');
+      if (stopBtn) {
+        stopBtn.addEventListener('click', function() {
+          if (!this.disabled && typeof gtag !== 'undefined') {
+            gtag('event', 'sampler_playback', {
+              event_category: 'WebSampler',
+              action: 'stop'
+            });
+          }
+        });
+      }
+
+      // Track cue point creation (listen for DOM changes)
+      const cueContainer = document.getElementById('cueButtons');
+      if (cueContainer) {
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+              const cueCount = cueContainer.querySelectorAll('button').length;
+              if (cueCount > 0 && typeof gtag !== 'undefined') {
+                gtag('event', 'sampler_cue_added', {
+                  event_category: 'WebSampler',
+                  cue_count: cueCount
+                });
+              }
+            }
+          });
+        });
+        observer.observe(cueContainer, { childList: true });
+      }
+
+      // Track tool engagement - user spent time using the sampler
+      let samplerEngaged = false;
+      function trackSamplerEngagement() {
+        if (samplerEngaged) return;
+        samplerEngaged = true;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'sampler_engaged', {
+            event_category: 'WebSampler',
+            engagement_type: 'tool_used'
+          });
+        }
+      }
+
+      // Listen for any interaction that indicates engagement
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.waveform-container') || 
+            e.target.closest('.controls-section') ||
+            e.target.closest('.cue-points-section')) {
+          trackSamplerEngagement();
+        }
+      }, { once: true });
+    })();
+    </script>
 </body>
 </html>

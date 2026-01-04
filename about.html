@@ -19,14 +19,15 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="preload" href="/fonts/GeistVF.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFF03CTZZZ"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43N0T5ZK1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
-    gtag("config", "G-DFF03CTZZZ", {
+    gtag("config", "G-H43N0T5ZK1", {
       page_title: document.title,
-      page_location: window.location.href
+      page_location: window.location.href,
+      content_group: "about"
     });
   </script>
   
@@ -326,7 +327,7 @@
 
   <main id="main">
     <!-- ====== Hero ====== -->
-    <section class="band band-hero">
+    <section class="band band-hero" id="hero" data-track-section>
       <div class="hero container">
         <span class="eyebrow reveal">New Zealand · Music Producer & DJ</span>
         <h1 class="reveal" style="transition-delay:.08s">P-MONEY</h1>
@@ -334,11 +335,11 @@
           New Zealand music producer and DJ. Creating beats, mixing tracks and curating the vibes since 2001.
         </p>
         <div class="hero-ctas reveal" style="transition-delay:.24s">
-          <a href="mailto:h@strikeagency?subject=P-Money Booking Enquiry&body=Event Name:%0D%0A%0D%0AEvent Date:%0D%0A%0D%0AEvent Region/City:%0D%0A%0D%0AEntity Hosting The Event (Ltd Company/Trust/Private):%0D%0A%0D%0AVenue Capacity:%0D%0A%0D%0AIs the show genre specific[Yes/No]:%0D%0A" class="btn btn-primary pulse" aria-label="Book P-Money for your event">
+          <a href="mailto:h@strikeagency?subject=P-Money Booking Enquiry&body=Event Name:%0D%0A%0D%0AEvent Date:%0D%0A%0D%0AEvent Region/City:%0D%0A%0D%0AEntity Hosting The Event (Ltd Company/Trust/Private):%0D%0A%0D%0AVenue Capacity:%0D%0A%0D%0AIs the show genre specific[Yes/No]:%0D%0A" class="btn btn-primary pulse" aria-label="Book P-Money for your event" data-track-click="about_hero_booking">
             <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             Book Now
           </a>
-          <a href="https://artists.spotify.com/songwriter/6K25VVFxoRKPhyLzmEXDzs" class="btn btn-ghost" aria-label="Listen to P-Money's music">Listen</a>
+          <a href="https://artists.spotify.com/songwriter/6K25VVFxoRKPhyLzmEXDzs" class="btn btn-ghost" aria-label="Listen to P-Money's music" data-track-click="about_hero_spotify">Listen</a>
         </div>
 
         <!-- Profile image -->
@@ -349,7 +350,7 @@
     </section>
 
     <!-- ====== About Section ====== -->
-    <section class="band band-about">
+    <section class="band band-about" id="about-section" data-track-section>
       <div class="section container">
         <h2 class="reveal">Production, Precision, Performance.</h2>
         <p class="lead reveal">Crafting sounds that move people — from studio to stage.</p>
@@ -383,21 +384,21 @@
         <div class="stripe reveal" style="transition-delay:.16s">
           <p>Active since 1997. Any similarity to other artists, living or dead, is purely coincidental.</p>
           <div class="hero-ctas">
-            <a href="https://en.wikipedia.org/wiki/P-Money" class="btn btn-ghost">Wikipedia ↗</a>
+            <a href="https://en.wikipedia.org/wiki/P-Money" class="btn btn-ghost" data-track-click="about_wikipedia">Wikipedia ↗</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ====== Contact / Links ====== -->
-    <section class="band band-contact">
+    <section class="band band-contact" id="contact-section" data-track-section>
       <div class="section container">
         <div class="grid">
           <div class="card reveal" style="grid-column: span 7; transition-delay:.04s">
             <h3 style="margin:0 0 10px; font-size:22px">Bookings & Enquiries</h3>
             <p class="subtle" style="margin:0 0 16px">Available for festivals, clubs and corporate events.</p>
             <div class="hero-ctas">
-              <a class="btn btn-primary" href="mailto:h@strikeagency?subject=P-Money Booking Enquiry&body=Event Name:%0D%0A%0D%0AEvent Date:%0D%0A%0D%0AEvent Region/City:%0D%0A%0D%0AEntity Hosting The Event (Ltd Company/Trust/Private):%0D%0A%0D%0AVenue Capacity:%0D%0A%0D%0AIs the show genre specific[Yes/No]:%0D%0A">
+              <a class="btn btn-primary" href="mailto:h@strikeagency?subject=P-Money Booking Enquiry&body=Event Name:%0D%0A%0D%0AEvent Date:%0D%0A%0D%0AEvent Region/City:%0D%0A%0D%0AEntity Hosting The Event (Ltd Company/Trust/Private):%0D%0A%0D%0AVenue Capacity:%0D%0A%0D%0AIs the show genre specific[Yes/No]:%0D%0A" data-track-click="about_contact_booking">
                 <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 Contact Booking Agent
               </a>
@@ -408,19 +409,19 @@
           <div class="card reveal" style="grid-column: span 5; transition-delay:.08s">
             <h3 style="margin:0 0 10px; font-size:22px">Connect</h3>
             <div style="display: flex; flex-direction: column; gap: 12px;">
-              <a href="https://artists.spotify.com/songwriter/6K25VVFxoRKPhyLzmEXDzs" class="btn btn-ghost" style="justify-content: flex-start;">
+              <a href="https://artists.spotify.com/songwriter/6K25VVFxoRKPhyLzmEXDzs" class="btn btn-ghost" style="justify-content: flex-start;" data-track-click="about_social_spotify">
                 <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M17.9 10.9C14.7 9 9.35 8.8 6.3 9.75c-.5.15-1-.15-1.15-.6-.15-.5.15-1 .6-1.15 3.55-1.05 9.4-.85 13.1 1.35.45.25.6.85.35 1.3-.25.35-.85.5-1.3.25zm-1.2 2.7c-.25.35-.7.5-1.05.25-2.7-1.65-6.8-2.15-9.95-1.15-.4.1-.85-.1-.95-.5-.1-.4.1-.85.5-.95 3.65-1.1 8.15-.55 11.25 1.35.3.15.45.65.2 1zm-1.05 2.7c-.15.25-.5.35-.75.2-2.35-1.45-5.3-1.75-8.8-.95-.35.1-.65-.15-.75-.45-.1-.35.15-.65.45-.75 3.8-.85 7.1-.5 9.7 1.1.35.15.4.55.15.85M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>
                 Spotify
               </a>
-              <a href="https://x.com/p_money" class="btn btn-ghost" style="justify-content: flex-start;">
+              <a href="https://x.com/p_money" class="btn btn-ghost" style="justify-content: flex-start;" data-track-click="about_social_twitter">
                 <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 Twitter
               </a>
-              <a href="https://instagram.com/p_money" class="btn btn-ghost" style="justify-content: flex-start;">
+              <a href="https://instagram.com/p_money" class="btn btn-ghost" style="justify-content: flex-start;" data-track-click="about_social_instagram">
                 <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
                 Instagram
               </a>
-              <a href="https://www.youtube.com/@p_money" class="btn btn-ghost" style="justify-content: flex-start;">
+              <a href="https://www.youtube.com/@p_money" class="btn btn-ghost" style="justify-content: flex-start;" data-track-click="about_social_youtube">
                 <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 YouTube
               </a>

@@ -18,14 +18,20 @@
   <meta property="og:type" content="website" />
   
   <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFF03CTZZZ"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43N0T5ZK1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
-    gtag("config", "G-DFF03CTZZZ", {
+    gtag("config", "G-H43N0T5ZK1", {
       page_title: document.title,
-      page_location: window.location.href
+      page_location: window.location.href,
+      content_group: "quickloopspro_download"
+    });
+    // Track download page view as a funnel step
+    gtag("event", "download_page_view", {
+      event_category: "QuickLoopsPro",
+      funnel_step: "download_page"
     });
   </script>
   
