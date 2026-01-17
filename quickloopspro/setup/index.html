@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuickLoops Pro Setup</title>
+  <meta name="description" content="Install and configure QuickLoops Pro with the official walkthrough." />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="https://pmoneymusic.com/icons/favicon.ico"> 
+  <link rel="apple-touch-icon" href="https://pmoneymusic.com/icons/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="QuickLoops Pro Setup" />
+  <meta property="og:description" content="Install and configure QuickLoops Pro with the official walkthrough." />
+  <meta property="og:image" content="https://pmoneymusic.com/img/quickloopspro-social.jpg" />
+  <meta property="og:url" content="https://quickloopspro.pmoneymusic.com/setup/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43N0T5ZK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-H43N0T5ZK1", {
+      page_title: document.title,
+      page_location: window.location.href,
+      content_group: "quickloopspro_setup"
+    });
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "C-MVCt1JKzcRNlfPm3-OWg4466PFvHqQ4ldC_Cgg"}'></script>
+
+  <!-- Custom Analytics & Download Tracking -->
+  <script src="https://pmoneymusic.com/js/analytics.js"></script>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #6b6b6f;
+      --accent: #0071e3;
+      --card: rgba(255,255,255,0.7);
+      --stroke: rgba(0,0,0,0.08);
+      --radius: 16px;
+      --glow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0c0d;
+        --fg: #fbfbfc;
+        --muted: #a8a8ad;
+        --card: rgba(22,22,24,0.6);
+        --stroke: rgba(255,255,255,0.12);
+        --glow: 0 20px 60px rgba(0,0,0,0.6);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+                   "Geist", "Inter", "Helvetica Neue", Arial, sans-serif;
+      color: var(--fg);
+      background: 
+        radial-gradient(1200px 600px at 50% -10%, rgba(0,113,227,0.10), transparent 60%),
+        var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .container {
+      width: min(880px, 100%);
+      padding: 48px 40px;
+      border-radius: var(--radius);
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--glow);
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      border-radius: 16px;
+      object-fit: contain;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(26px, 3vw, 36px);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 24px;
+      font-size: 16px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #0f0f12;
+      box-shadow: var(--glow);
+      margin: 24px auto 0;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      color: #0b0b0c;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary {
+      background: linear-gradient(180deg, #1f86ff, #0071e3);
+      color: #fff;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://pmoneymusic.com/icons/quickloopspro-icon-64.png" alt="QuickLoops Pro" class="logo" />
+    <h1>Install & Configure QuickLoops Pro</h1>
+    <p>This walkthrough covers installation, audio device selection, and MIDI setup.</p>
+
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/cuyRVJ-Mnzk?si=w3Rirnk6bKrgM7Ar"
+        title="QuickLoops Pro Install and Configuration"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://quickloopspro.pmoneymusic.com" class="btn btn-primary">Get the Download Link</a>
+      <a href="/docs/Quick_Start_Guide.pdf" class="btn" download>Quick Start Guide</a>
+    </div>
+  </div>
+</body>
+</html>

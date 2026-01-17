@@ -146,6 +146,36 @@
       color: var(--muted);
     }
 
+    .setup-video {
+      margin-top: 32px;
+      text-align: left;
+    }
+    .setup-video h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .setup-video p {
+      margin: 0 0 16px;
+      font-size: 14px;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #0f0f12;
+      box-shadow: var(--glow);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     /* Thank you state */
     #downloadState, #thankYouState {
       transition: opacity 0.3s ease;
@@ -215,6 +245,21 @@
       
       <div class="requirements">
         <strong>Installation:</strong> Open the .dmg file and drag QuickLoops Pro to your Applications folder.
+      </div>
+
+      <div class="setup-video">
+        <h2>Install & Configure</h2>
+        <p>New to QuickLoops Pro? Watch the quick setup walkthrough.</p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/cuyRVJ-Mnzk?si=w3Rirnk6bKrgM7Ar"
+            title="QuickLoops Pro Install and Configuration"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
       
       <a href="https://quickloopspro.pmoneymusic.com/#demo" class="back-link">Watch Demo</a>

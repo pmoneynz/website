@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="80" viewBox="0 0 400 80">
+  <defs>
+    <style>
+      .brand-text {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  
+  <!-- Logo icon -->
+  <image 
+    x="0" 
+    y="26" 
+    width="56" 
+    height="56" 
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAWJAAAFiQFtaJ36AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAATGSURBVHgB5VfNa11VEJ855yXgQk3caRd5IoIKbbNxI/LyFKF0Ydr6ubFJdlIEXVoEDf4BVURdlm4tUr9IdSOSIgiahaFKA7VJX4xCoW36Utokfe++O5053/e+r+574fLOPWfOzG9mfmfOPID7/cFBi0SD1+/ZCAL1XYPehhV09MEc6A0ktRcwf5AFkbWoqNN8x4eFeVWm7EuQsUiTEBoK9PegW6d5Uz4UwO3b8OgDo/or1lFDowmdznQLdf8GMbLwCA2qaIJ+xwq9ykv/9wXAnmvo4C9EWCva7QcghoMKIuQApLskKPAbg6ixfMfPq4IU6DeBVC3aLBpKIXhQKKrJygkQ7z0mkjYjWr6fgxa8kupSifcIWX6ETNgoMZAXzFplCM0mwvo6QGOd4M4dN2+25Qm8FH5uxxpe70luIR5luERtRXkb3auI+FfePOP5lqLPP1NUn2IfMRJOxlM1pG/PKLOn65W9be2/LxiS9wCg2fjFACBTAUSeIV2+hLR/X8LyHu+pk2AMUTCuE2ccgJZaJ5sP81SgmNwRSyYVQilPo0Hw4kt8nhr2e3wcYW4WYN9eu+mPJYCVFYLZGQWeN4uLBPUXICEj+aR3e+8jwCg3yuEjjkS1KrRGyRy99y7S1qZOPPS/2qVM0cIPyqTl+PtI3fr0RhqBIoAMNygxLKE7dRJDvj84bhRYYz6vmS4AWeNUcYRCWj45AQGY6GO9gwAoFwEMuaxPWWXVKlBrVyWeYpJru+fyJWXkXBkyEZPI/bgQ+TQQAAUA2jKfxyMjFsDcrDOY6UjOdhy3djQ9/RRKBYinw/2OjQGt/N07AgUSinSzCbC1ZaoWXLmC0G7n5jAzD8yZ92ydmCjeL198mcPOLsFE1eqQVyRkn4yOvZPDN2cUjI/1ud98CuS4mTBi6Zgl3x/PF8NPIcfWy2NvKyM3OopFvgxLgeWANrmUsFmDWAAy/1FSH9rpGEPa6nULeHISSjwZdgraDCCzSn49153LI4fLVU2Xqh3S2j8qRGtuJhYkH6VhEfjXVkEwyj49oQIIqQWbVxOjmQ9tJOONa5oer2IAIJHM09KeDQPQUo3Acqd8/kPLCeGGP36bV7FY46VUryqa3B+jJgUrAE0iVE4BpgA4RKtC8HANu6tfGD02bi/9Bt+ATzxJMP0yAOcYtrcRlpYIFs/FU3HggIKfFoqNSmwv8D+sdKppTxABZLhqvY+XEIXLxTJa6oHnBSb8QEdY8XznVnd59hHlFKz1rwOE2wYrFRsRCsEimDlq5/9cBjh/nqBSQdizh+DQNMLhQwj1mqCh6DX63sbqJFI3ucegXimQfuA0X1evhV6u3H2Zdk8aD78mi6rQgrnWK8AG9Der65gIz0KlM+0b1PRq5OJD30Hay3gdlDR9fi6UBttBIdpxMI5ONeXgGzSzqOhs1NLdlD4Emf6ZV58tNKXGQ+dtMJxGwY2NqdxGCBLioesZif6CCj3P3t/0NsvNwS0OzxyjXnYNXmwuMaGzV51eB+TA+PT4VDgisPFlTv1bxkbydN0Mrl97hBl7VCk6yJsfY0UPs6Q2eLBkFKLBdI5TwseMdvnjIn8sgMq/5vH18p+TPldTAKLgAr/P9Jcb8vh8yZmnQX/R7t/nLpSVZztQLbOIAAAAAElFTkSuQmCC"
+    clip-path="url(#logo-clip)"
+  />
+  
+  <!-- Rounded corners clip path for logo -->
+  <defs>
+    <clipPath id="logo-clip">
+      <rect x="0" y="26" width="56" height="56" rx="14" ry="14"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Brand text -->
+  <text x="72" y="60" class="brand-text">QuickLoops Pro</text>
+</svg>
