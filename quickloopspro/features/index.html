@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuickLoops Pro Features — Full List</title>
+  <meta name="description" content="Full feature list for QuickLoops Pro: dual-deck looper, multi-mode sync, MIDI learn, audio routing, device management, meters, and performance optimizations." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+  <meta property="og:title" content="QuickLoops Pro Features — Full List">
+  <meta property="og:description" content="Everything QuickLoops Pro can do, organized by category.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://pmoneymusic.com/img/quickloopspro-social.jpg">
+  <meta property="og:url" content="https://quickloopspro.pmoneymusic.com/features/">
+
+  <link rel="icon" href="https://pmoneymusic.com/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="https://pmoneymusic.com/icons/apple-touch-icon.png">
+  <link rel="canonical" href="https://quickloopspro.pmoneymusic.com/features/" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43N0T5ZK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-H43N0T5ZK1", {
+      page_title: document.title,
+      page_location: window.location.href,
+      content_group: "quickloopspro_features"
+    });
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "C-MVCt1JKzcRNlfPm3-OWg4466PFvHqQ4ldC_Cgg"}'></script>
+
+  <!-- Custom Analytics -->
+  <script src="https://pmoneymusic.com/js/analytics.js"></script>
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #6b6b6f;
+      --card: rgba(255,255,255,0.7);
+      --stroke: rgba(0,0,0,0.08);
+      --accent: #0071e3;
+      --glow: 0 20px 40px rgba(0,0,0,0.08);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --maxw: 1128px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0c0c0d;
+        --fg: #fbfbfc;
+        --muted: #a8a8ad;
+        --card: rgba(22,22,24,0.6);
+        --stroke: rgba(255,255,255,0.12);
+        --glow: 0 20px 60px rgba(0,0,0,0.6);
+      }
+    }
+
+    html,body{height:100%}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+                   "Geist", "Neue Haas Grotesk Text Pro", "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+      color:var(--fg);
+      background:
+        radial-gradient(1200px 600px at 70% -10%, rgba(0,113,227,0.10), transparent 60%),
+        radial-gradient(900px 500px at -10% 10%, rgba(160,160,255,0.10), transparent 60%),
+        var(--bg);
+      letter-spacing: -0.01em;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+    .skip-link{
+      position:absolute; top:-100%; left:50%; transform:translateX(-50%);
+      padding:12px 24px; background:var(--accent); color:#fff; border-radius:8px;
+      font-weight:600; z-index:100; transition:top 0.2s ease;
+    }
+    .skip-link:focus{top:12px}
+
+    /* Nav (mirrors /quickloopspro/) */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      background: color-mix(in oklab, var(--card) 90%, transparent);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      height:64px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:700; font-size:16px;
+    }
+    .brand-logo{
+      width:28px; height:28px; border-radius:8px;
+      object-fit: contain;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .nav-links{display:flex; gap:20px; align-items:center;}
+    .nav-links a{font-size:14px; color:var(--muted);}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:12px 18px; border-radius:999px; border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      color:#0b0b0c; font-weight:600; box-shadow: var(--glow);
+      transition: transform 0.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn:active{transform:translateY(0)}
+    @media (prefers-color-scheme: dark){
+      .btn{ background: linear-gradient(180deg, rgba(36,36,38,0.9), rgba(24,24,26,0.9)); color:var(--fg) }
+    }
+    .btn-primary{ background: linear-gradient(180deg, #1f86ff, #0071e3); color:#fff; border:0; }
+    .btn-ghost{ background: transparent; color:var(--fg); }
+
+    /* Page */
+    .hero{padding: 68px 0 18px; text-align:center;}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 12px; border-radius:999px; font-size:13px; color:var(--muted);
+      border:1px solid var(--stroke); background: color-mix(in oklab, var(--card) 95%, transparent);
+    }
+    h1{
+      margin:18px auto 12px; max-width: 24ch;
+      font-size: clamp(34px, 4.8vw, 58px); line-height:1.05; letter-spacing:-0.02em;
+    }
+    .lead{
+      margin:0 auto 18px; max-width: 72ch;
+      font-size: 17px; color: var(--muted); line-height:1.6;
+    }
+
+    .section{padding: 20px 0 72px;}
+    .card{
+      border:1px solid var(--stroke); border-radius: var(--radius); padding:22px;
+      background: var(--card); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--glow);
+    }
+
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .tile{grid-column: span 4; min-height: 140px;}
+    .tile h3{margin:0 0 6px; font-size:16px}
+    .tile p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    @media (max-width: 1024px){ .tile{grid-column: span 6;} }
+    @media (max-width: 640px){ .tile{grid-column: span 12;} }
+    .stack{display:grid; gap: 12px;}
+    .stack-after-card{margin-top: 18px;}
+
+    details{
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      background: var(--card);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--glow);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding: 18px 18px;
+      font-weight: 650;
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 14px;
+    }
+    summary::-webkit-details-marker{display:none;}
+    .summary-chevron{
+      width: 18px;
+      height: 18px;
+      color: var(--muted);
+      flex: 0 0 auto;
+      transition: transform 0.18s ease;
+    }
+    details[open] > summary .summary-chevron{
+      transform: rotate(180deg);
+    }
+    .details-body{padding: 0 18px 18px;}
+    .details-body p{margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height:1.6;}
+    ul{margin:0; padding-left: 18px;}
+    li{margin: 7px 0; line-height:1.55;}
+
+    footer{
+      border-top:1px solid var(--stroke);
+      padding:40px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footrow{
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a href="/" class="brand" aria-label="Back to QuickLoops Pro overview">
+        <img src="https://pmoneymusic.com/icons/quickloopspro-icon-32.png" alt="QuickLoops Pro" class="brand-logo" />
+        <span>QuickLoops Pro</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#features">Overview</a>
+        <a href="/docs/Quick_Start_Guide.pdf" download>Docs</a>
+        <a href="/download/" class="btn btn-primary" data-track-click="qlp_features_download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <span class="eyebrow">Full Feature List · 73 items</span>
+      <h1>Everything QuickLoops Pro can do</h1>
+      <p class="lead">
+        This is the full, categorized feature list for QuickLoops Pro.
+      </p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="/#main" data-track-click="qlp_features_cta_top">Get the Download Link</a>
+        <a class="btn btn-ghost" href="/#demo" data-track-click="qlp_features_demo_top">Watch Demo</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2 style="margin:0 0 14px; font-size:20px; letter-spacing:-0.01em;">Highlights</h2>
+        <div class="grid">
+          <div class="card tile" style="box-shadow:none;">
+            <h3>Dual-Deck Looper</h3>
+            <p>Two independent loopers side-by-side — run Deck 1 and Deck 2 as separate performance lanes.</p>
+          </div>
+          <div class="card tile" style="box-shadow:none;">
+            <h3>8 Loops Per Deck</h3>
+            <p>8 loop slots per deck (16 total loops) so you can capture and recall ideas instantly.</p>
+          </div>
+          <div class="card tile" style="box-shadow:none;">
+            <h3>Single/Multi Mode</h3>
+            <p><strong>Single:</strong> one loop at a time (new loop stops previous). <strong>Multi:</strong> multiple loops at once with tempo sync.</p>
+          </div>
+          <div class="card tile" style="box-shadow:none;">
+            <h3>Simple Record/Play</h3>
+            <p>Tap a loop to record. Tap again to play. Built for zero-friction capture in the moment.</p>
+          </div>
+          <div class="card tile" style="box-shadow:none;">
+            <h3>Match Speed</h3>
+            <p>Match one deck’s BPM to the other deck to keep both sides locked together.</p>
+          </div>
+          <div class="card tile" style="box-shadow:none;">
+            <h3>MIDI Learn Mode</h3>
+            <p>Learn MIDI mappings by pressing buttons — fast setup that feels like hardware.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack stack-after-card" id="featureGroups">
+        <details data-group>
+          <summary>
+            <span>Core Looping Features</span>
+            <svg class="summary-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5L12 15l5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="details-body">
+            <p>The core workflow: record, play, sync, and see what’s happening in real time.</p>
+            <ul>
+              <li><strong>Dual-Deck Looper</strong> — Two independent loopers side-by-side</li>
+              <li><strong>8 Loops Per Deck</strong> — Each deck has 8 loop slots (16 total loops)</li>
+              <li><strong>Record/Play</strong> — Tap loop to record, tap again to play</li>
+              <li><strong>Single Mode</strong> — Only one loop plays at a time (new loop stops previous)</li>
+              <li><strong>Multi Mode</strong> — Multiple loops can play simultaneously with tempo sync</li>
+              <li><strong>Master Loop Sync</strong> — In Multi Mode, loops sync to master loop length (loop 1) with power-of-2 ratios (1/64× to 64×)</li>
+              <li><strong>Loop Progress Visualization</strong> — Real-time progress bar showing playback position</li>
+              <li><strong>Loop Information Display</strong> — Shows BPM, bar count, and duration for each loop</li>
+              <li><strong>BPM Detection</strong> — Automatic tempo detection (80–160 BPM range)</li>
+              <li><strong>Bar Count Display</strong> — Supports whole bars and fractional notes (½, ¼, ⅛, 1/16, 1/32, 1/64)</li>
+            </ul>
+          </div>
+        </details>
+
+        <details data-group>
+          <summary>
+            <span>Loop Manipulation</span>
+            <svg class="summary-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5L12 15l5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="details-body">
+            <p>Change loop length and speed live, with controls designed for performance and MIDI.</p>
+            <ul>
+              <li><strong>Halve Loop</strong> — Cut loop length in half (½ button)</li>
+              <li><strong>Double Loop</strong> — Double loop length (x2 button), up to original recorded length</li>
+              <li><strong>Speed Control</strong> — Playback speed adjustment from 0.5× to 2.0× via slider</li>
+              <li><strong>Reset Speed</strong> — Return to 1.0× speed</li>
+              <li><strong>Match Speed</strong> — Match one deck’s BPM to the other deck</li>
+              <li><strong>Speed Up/Down</strong> — MIDI-mappable</li>
+              <li><strong>Variable Speed Playback</strong> — Real-time speed changes with interpolation</li>
+            </ul>
+          </div>
+        </details>
+
+        <details data-group>
+          <summary>
+            <span>Transport Controls</span>
+            <svg class="summary-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5L12 15l5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="details-body">
+            <p>Fast stop/clear operations and visible state so you don’t get lost mid-set.</p>
+            <ul>
+              <li><strong>Stop</strong> — Stop current loop playback</li>
+              <li><strong>Clear Mode</strong> — Enter clear mode, tap pad to delete</li>
+              <li><strong>Clear All Loops</strong> — Triple-click Clear button to delete all loops instantly</li>
+              <li><strong>Loop State Indicators</strong> — Visual feedback (empty, recording, playing, stopped)</li>
+              <li><strong>Color-Coded Loops</strong> — 8 distinct colors for visual identification</li>
+            </ul>
+          </div>
+        </details>
+
+        <details data-group>
+          <summary>
+            <span>Audio Features</span>
+            <svg class="summary-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5L12 15l5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="details-body">
+            <p>Monitoring, gain staging, meters, and routing that fit real DJ/audio setups.</p>
+            <ul>
+              <li><strong>Input Monitoring</strong> — Hear input signal through output</li>
+              <li><strong>Auto Mute Monitor</strong> — Automatically disable monitoring when playback starts</li>
+              <li><strong>Input Level Control</strong> — Adjust recording input gain</li>
+              <li><strong>Output Level Control</strong> — Adjust playback volume (up to 2.0×)</li>
+              <li><strong>Master Volume</strong> — Global master volume control</li>
+              <li><strong>Level Meters</strong> — Real-time input/output level meters</li>
+              <li><strong>Multi-Channel Support</strong> — Per-deck input/output channel routing</li>
+              <li><strong>Channel Routing</strong> — Select specific input/output channels per deck</li>
+            </ul>
+          </div>
+        </details>
+
+        <details data-group>
+          <summary>
+            <span>Audio Device Management</span>
+            <svg class="summary-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5L12 15l5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="details-body">
+            <p>Control devices and latency characteristics without leaving the app.</p>
+            <ul>
+              <li><strong>Input Device Selection</strong> — Choose audio input device</li>
+              <li><strong>Output Device Selection</strong> — Choose audio output device</li>
+              <li><strong>Buffer Size Control</strong> — Adjustable buffer size (32, 64, 128, 256, 512, 1024 frames)</li>
+              <li><strong>Device Refresh</strong> — Refresh audio device list</li>
+              <li><strong>Default Device Fallback</strong> — Automatic fallback to system defaults</li>
+            </ul>
+          </div>
+        </details>
+
+        <details data-group>
+          <summary>
+            <span>MIDI Control</span>
+            <svg class="summary-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5L12 15l5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="details-body">
+            <p>Hardware-style control: learn mappings fast, handle hot-plug, and keep decks independent.</p>
+            <ul>
+              <li><strong>MIDI Learn Mode</strong> — Learn MIDI mappings by pressing buttons</li>
+              <li><strong>Performance Pad MIDI Mapping</strong> — Map each of 8 loop pads to MIDI notes</li>
+              <li><strong>Transport MIDI Mapping</strong> — Map Stop, Clear to MIDI</li>
+              <li><strong>Speed MIDI Mapping</strong> — Map Speed Up, Speed Down, Reset Speed, Match Speed</li>
+              <li><strong>Loop Manipulation MIDI</strong> — Map Halve Loop, Double Loop</li>
+              <li><strong>Per-Deck MIDI</strong> — Independent MIDI mappings per deck</li>
+              <li><strong>MIDI Channel Support</strong> — Supports all 16 MIDI channels</li>
+              <li><strong>MIDI Device Auto-Connect</strong> — Automatically connects to available MIDI sources</li>
+              <li><strong>MIDI Device Hot-Plug</strong> — Handles MIDI device connection/disconnection</li>
+            </ul>
+          </div>
+        </details>
+
+        <details data-group>
+          <summary>
+            <span>Visual Feedback</span>
+            <svg class="summary-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5L12 15l5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="details-body">
+            <p>Instant state and meter feedback that’s readable during performance.</p>
+            <ul>
+              <li><strong>Deck Status Indicators</strong> — Toolbar indicators showing deck state (idle, recording, playing, overdubbing)</li>
+              <li><strong>Loop Visual States</strong> — Icons and borders indicate loop state</li>
+              <li><strong>Master Loop Badge</strong> — “M” badge on master loop in Multi Mode</li>
+              <li><strong>Flash Feedback</strong> — Visual flash on MIDI/UI triggers</li>
+              <li><strong>Color-Coded Loop Grid</strong> — 8 distinct colors matching MIDI settings</li>
+              <li><strong>Horizontal Master Meter</strong> — Combined master output level meter in toolbar</li>
+              <li><strong>Vertical Level Meters</strong> — Per-deck input/output meters</li>
+            </ul>
+          </div>
+        </details>
+
+        <details data-group>
+          <summary>
+            <span>Settings &amp; Configuration</span>
+            <svg class="summary-chevron" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 9.5L12 15l5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="details-body">
+            <p>Setup options live where they should, and they persist.</p>
+            <ul>
+              <li><strong>Persistent Settings</strong> — All settings saved and restored</li>
+              <li><strong>Per-Deck Settings</strong> — Independent settings per deck</li>
+              <li><strong>Settings Dialog</strong> — Comprehensive audio settings interface</li>
+              <li><strong>MIDI Settings Dialog</strong> — Dedicated MIDI configuration interface</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footrow">
+      <span>© <span id="year"></span> QuickLoops</span>
+      <span><a href="/">Back to Overview</a> · <a href="mailto:support@pmoneymusic.com">Support</a></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

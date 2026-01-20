@@ -21,4 +21,15 @@
   <priority>0.60</priority>
 </url>
 
+<url>
+  <loc>https://quickloopspro.pmoneymusic.com/</loc>
+  <lastmod>2026-01-20</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://quickloopspro.pmoneymusic.com/features/</loc>
+  <lastmod>2026-01-20</lastmod>
+  <priority>0.70</priority>
+</url>
+
 </urlset>
