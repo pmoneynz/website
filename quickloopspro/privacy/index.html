@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — QuickLoops Pro</title>
+  <meta name="description" content="Privacy Policy for QuickLoops Pro (website, downloads, and email updates)." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+  <meta property="og:title" content="Privacy Policy — QuickLoops Pro">
+  <meta property="og:description" content="How QuickLoops Pro handles information on this website and related services.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://pmoneymusic.com/img/quickloopspro-social.jpg">
+  <meta property="og:url" content="https://quickloopspro.pmoneymusic.com/privacy">
+
+  <link rel="icon" href="https://pmoneymusic.com/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="https://pmoneymusic.com/icons/apple-touch-icon.png">
+  <link rel="canonical" href="https://quickloopspro.pmoneymusic.com/privacy" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43N0T5ZK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-H43N0T5ZK1", {
+      page_title: document.title,
+      page_location: window.location.href,
+      content_group: "quickloopspro_privacy"
+    });
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "C-MVCt1JKzcRNlfPm3-OWg4466PFvHqQ4ldC_Cgg"}'></script>
+
+  <!-- Custom Analytics -->
+  <script src="https://pmoneymusic.com/js/analytics.js"></script>
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #6b6b6f;
+      --card: rgba(255,255,255,0.7);
+      --stroke: rgba(0,0,0,0.08);
+      --accent: #0071e3;
+      --glow: 0 20px 40px rgba(0,0,0,0.08);
+      --radius: 16px;
+      --maxw: 980px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0c0c0d;
+        --fg: #fbfbfc;
+        --muted: #a8a8ad;
+        --card: rgba(22,22,24,0.6);
+        --stroke: rgba(255,255,255,0.12);
+        --glow: 0 20px 60px rgba(0,0,0,0.6);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+                   "Geist", "Neue Haas Grotesk Text Pro", "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+      color:var(--fg);
+      background:
+        radial-gradient(1200px 600px at 70% -10%, rgba(0,113,227,0.10), transparent 60%),
+        radial-gradient(900px 500px at -10% 10%, rgba(160,160,255,0.10), transparent 60%),
+        var(--bg);
+      letter-spacing: -0.01em;
+    }
+
+    a{color:inherit}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+    .skip-link{
+      position:absolute; top:-100%; left:50%; transform:translateX(-50%);
+      padding:12px 24px; background:var(--accent); color:#fff; border-radius:8px;
+      font-weight:600; z-index:100; transition:top 0.2s ease;
+      text-decoration:none;
+    }
+    .skip-link:focus{top:12px}
+
+    /* Nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      background: color-mix(in oklab, var(--card) 90%, transparent);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px;}
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:700; font-size:16px;
+      text-decoration:none;
+    }
+    .brand-logo{
+      width:28px; height:28px; border-radius:8px;
+      object-fit: contain;
+      display:block;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .nav-links{display:flex; gap:18px; align-items:center;}
+    .nav-links a{font-size:14px; color:var(--muted); text-decoration:none;}
+    .nav-links a:hover{color:var(--fg)}
+
+    /* Page */
+    .hero{padding: 54px 0 18px; text-align:left;}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 12px; border-radius:999px; font-size:13px; color:var(--muted);
+      border:1px solid var(--stroke); background: color-mix(in oklab, var(--card) 95%, transparent);
+    }
+    h1{
+      margin:16px 0 10px;
+      font-size: clamp(32px, 4.6vw, 54px);
+      letter-spacing:-0.02em;
+      line-height:1.05;
+    }
+    .lead{
+      margin:0;
+      max-width: 80ch;
+      color: var(--muted);
+      line-height:1.7;
+      font-size: 16px;
+    }
+
+    .section{padding: 18px 0 72px;}
+    .card{
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--glow);
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing:-0.01em;
+    }
+    .card p{
+      margin: 10px 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .card ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .card li{margin: 8px 0;}
+    .card strong{color:var(--fg)}
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+
+    footer{
+      border-top:1px solid var(--stroke);
+      padding:40px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footrow{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+    .footrow a{color:var(--muted); text-decoration:none;}
+    .footrow a:hover{color:var(--fg)}
+
+    @media (max-width: 640px){
+      .nav-links{gap:12px;}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a href="/" class="brand" aria-label="Back to QuickLoops Pro overview">
+        <img src="https://pmoneymusic.com/icons/quickloopspro-icon-32.png" alt="QuickLoops Pro" class="brand-logo" />
+        <span>QuickLoops Pro</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/#features">Overview</a>
+        <a href="/download/">Download</a>
+        <a href="/docs/Quick_Start_Guide.pdf" download>Docs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <span class="eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="lead">
+        This Privacy Policy explains how QuickLoops Pro (“we”, “us”) handles information when you use the QuickLoops Pro website and related download/email services at <code>quickloopspro.pmoneymusic.com</code>.
+        <br><br>
+        <strong>Last updated:</strong> January 21, 2026
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>What we collect</h2>
+        <ul>
+          <li><strong>Email address (optional):</strong> If you enter your email to receive a download link or updates, we collect the email address you submit.</li>
+          <li><strong>Website analytics data:</strong> We use Google Analytics 4 and Cloudflare Web Analytics to understand how the site is used (for example: page views, clicks, device/browser info, approximate location, and referrer information). These services may use cookies or similar technologies.</li>
+          <li><strong>Download metrics & logs:</strong> When you download a <code>.dmg</code> from our site, our infrastructure records basic metadata such as the file requested, timestamp, referrer, and user agent, and may increment download counters.</li>
+          <li><strong>Local storage:</strong> The website may store small pieces of data in your browser (for example, to remember whether you’re a returning visitor or whether you’ve already submitted the email form).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>How we use information</h2>
+        <ul>
+          <li><strong>Provide downloads and updates:</strong> If you submit your email, we use it to send you a download link and (if applicable) product updates.</li>
+          <li><strong>Operate and improve the site:</strong> We use analytics and aggregated metrics to understand performance, fix issues, and improve pages.</li>
+          <li><strong>Security and abuse prevention:</strong> Basic request metadata may be used to protect the site and services.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Sharing and third parties</h2>
+        <p>
+          We do not sell your personal information.
+          We may share information with service providers that help us run the site and deliver emails/downloads (for example, analytics providers and hosting infrastructure), and only as needed to provide and maintain the service.
+        </p>
+        <p>
+          If you download QuickLoops Pro through Apple’s App Store (when applicable), Apple may collect information as part of providing their services. See Apple’s privacy information for details.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Data retention</h2>
+        <p>
+          We keep email addresses for as long as needed to provide download links/updates, or until you ask us to delete your information.
+          Analytics and download metrics may be retained for operational and reporting purposes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Your choices</h2>
+        <ul>
+          <li><strong>Email:</strong> You can request access, correction, or deletion of your email address by contacting us.</li>
+          <li><strong>Cookies/analytics:</strong> You can limit cookies and local storage via your browser settings. Some analytics features may stop working properly if you block all storage.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Children’s privacy</h2>
+        <p>
+          QuickLoops Pro is not intended for children under 13, and we do not knowingly collect personal information from children.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Changes to this policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. If we make changes, we’ll update the “Last updated” date on this page.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>
+          If you have questions or requests about privacy, contact us at <a href="mailto:support@pmoneymusic.com">support@pmoneymusic.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footrow">
+      <span>© <span id="year"></span> QuickLoops</span>
+      <span>
+        <a href="/">Back to Overview</a> ·
+        <a href="/privacy/">Privacy Policy</a> ·
+        <a href="mailto:support@pmoneymusic.com">Support</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
