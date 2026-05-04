@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>P-Money Created QuickLoops Pro: The Story Behind the App</title>
+  <meta name="description" content="Peter Wadams (P-Money) is the creator of QuickLoops Pro, a looper built for vinyl DJs. Learn what it is, who it is for, and where to get it." />
+  <link rel="canonical" href="https://www.pmoneymusic.com/blog/p-money-quickloops-pro/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="P-Money Created QuickLoops Pro: The Story Behind the App" />
+  <meta property="og:description" content="Why Peter Wadams (P-Money) built QuickLoops Pro, what it does, and who it is designed for." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.pmoneymusic.com/blog/p-money-quickloops-pro/" />
+  <meta property="og:image" content="https://www.pmoneymusic.com/img/social-1200x630.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="P-Money Created QuickLoops Pro: The Story Behind the App" />
+  <meta name="twitter:description" content="Why Peter Wadams (P-Money) built QuickLoops Pro, what it does, and who it is designed for." />
+  <meta name="twitter:image" content="https://www.pmoneymusic.com/img/social-1200x630.jpg" />
+  <link rel="icon" href="/icons/favicon.ico" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43N0T5ZK1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-H43N0T5ZK1", {
+      page_title: document.title,
+      page_location: window.location.href,
+      content_group: "blog"
+    });
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "C-MVCt1JKzcRNlfPm3-OWg4466PFvHqQ4ldC_Cgg"}'></script>
+
+  <!-- Custom Analytics -->
+  <script src="/js/analytics.js"></script>
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --muted: #6b6b6f;
+      --card: rgba(255,255,255,0.75);
+      --stroke: rgba(0,0,0,0.08);
+      --accent: #0071e3;
+      --maxw: 820px;
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0c0c0d;
+        --fg: #fbfbfc;
+        --muted: #a8a8ad;
+        --card: rgba(22,22,24,0.65);
+        --stroke: rgba(255,255,255,0.12);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:var(--fg);
+      background:
+        radial-gradient(900px 500px at 60% -10%, rgba(0,113,227,0.10), transparent 60%),
+        var(--bg);
+      letter-spacing: -0.01em;
+    }
+    a{color:inherit}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      backdrop-filter: saturate(180%) blur(16px);
+      background: color-mix(in oklab, var(--card) 90%, transparent);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between; height:64px;
+      max-width:1100px; margin:0 auto; padding:0 24px;
+    }
+    .brand{font-weight:700; text-decoration:none}
+    .nav-links{display:flex; gap:16px; align-items:center}
+    .nav-links a{text-decoration:none; color:var(--muted); font-size:14px}
+    .article{padding:56px 0 72px}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 12px; border-radius:999px; font-size:12px; color:var(--muted);
+      border:1px solid var(--stroke); background: color-mix(in oklab, var(--card) 95%, transparent);
+      margin-bottom:18px;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size: clamp(34px, 6vw, 52px);
+      letter-spacing:-0.02em;
+      line-height:1.04;
+    }
+    .lead{
+      margin:0 0 28px;
+      color:var(--muted);
+      font-size: clamp(17px, 2.4vw, 22px);
+      line-height:1.5;
+    }
+    .card{
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding:24px;
+      background: var(--card);
+      margin-bottom:16px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:24px;
+      letter-spacing:-0.01em;
+    }
+    .card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:16px;
+    }
+    .card p:last-child{margin-bottom:0}
+    .list{
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .cta{
+      margin-top:24px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
+    .btn-primary{
+      background: linear-gradient(180deg, #1f86ff, #0071e3);
+      color:#fff;
+      border:0;
+    }
+    .btn-ghost{
+      background: transparent;
+      color: var(--fg);
+    }
+    footer{
+      border-top:1px solid var(--stroke);
+      padding:32px 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="/about" class="brand" aria-label="P-Money Home">P-Money</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/about">About</a>
+        <a href="/sequencer.html">Web Sampler</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article">
+    <article class="container">
+      <span class="eyebrow">Blog · Product Story</span>
+      <h1>Peter Wadams (P-Money) is the creator of QuickLoops Pro</h1>
+      <p class="lead">
+        QuickLoops Pro is a software looper created by Peter Wadams, also known as P-Money, built from the perspective of a working DJ who needed faster loop capture in real performance settings.
+      </p>
+
+      <section class="card">
+        <h2>What QuickLoops Pro is</h2>
+        <p>
+          QuickLoops Pro is a dedicated loop performance app for macOS. It is focused on instant capture and playback, with an interface designed around the needs of live mixing rather than traditional DAW workflows.
+        </p>
+        <p>
+          The core idea is simple: record quickly, loop immediately, and stay in flow while performing.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Why Peter built it</h2>
+        <p>
+          As a producer and DJ, Peter wanted a looper that felt practical in a DJ set: low-friction operation, hardware-style control, and a performance-first experience. QuickLoops Pro was built to solve that specific problem directly.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Who QuickLoops Pro is for</h2>
+        <ul class="list">
+          <li>Vinyl DJs and turntablists</li>
+          <li>DJs performing with external mixers and audio interfaces</li>
+          <li>Artists who want fast loop capture without opening a full DAW</li>
+          <li>Performers who want expressive looping with MIDI-friendly controls</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Explore QuickLoops Pro</h2>
+        <p>
+          Visit the official QuickLoops Pro site to see current features, watch demos, and access downloads:
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://quickloopspro.com">Visit quickloopspro.com</a>
+          <a class="btn btn-ghost" href="https://quickloopspro.com/features">View feature list</a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> P-Money · <a href="/about">About</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
