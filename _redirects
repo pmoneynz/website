@@ -1,6 +1,10 @@
 # Subdomain routing is now handled by functions/_middleware.js
 # The middleware routes quickloopspro.pmoneymusic.com to /quickloopspro/ folder
 
+# Main homepage now lives at /about
+/ /about 301
+/index.html /about 301
+
 # Legacy QuickLoops paths now live on quickloopspro.com
 /quickloopspro https://quickloopspro.com 301
 /quickloopspro/ https://quickloopspro.com/ 301
